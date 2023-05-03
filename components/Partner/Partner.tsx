@@ -1,8 +1,10 @@
-// import Slider from "react-slick";
+'use client';
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { frameImgUrl } from "@/utils/helper";
 import styles from "./Partner.module.scss";
+import Image from "next/image";
 
 interface PartnerProps {
   content: any;
@@ -10,7 +12,7 @@ interface PartnerProps {
 
 export default function Partner( { content }: PartnerProps) {
 
-  const logos: string[] = content.logos;
+  const logos: string[] = content.logos || 0;;
   
   const settings: any = {
     arrows:false,
@@ -45,16 +47,18 @@ export default function Partner( { content }: PartnerProps) {
   return (
     <section className={styles.partner}>
       <div className="position-relative container">
-        {/* <Slider {...settings}>
-          {logos?.map((item: any, index: number) => (
-            <img
+        <Slider {...settings}>
+          {logos && logos?.map((item: any, index: number) => (
+            <Image
               key={index}
               src={`${frameImgUrl(item?.asset?._ref)}`}
-              alt=""
+              alt="Partners logo" 
               className="w-100 h-100"
+              width={150}
+              height={80}
             />
           ))}
-        </Slider> */}
+        </Slider>
       </div>
     </section>
   );
