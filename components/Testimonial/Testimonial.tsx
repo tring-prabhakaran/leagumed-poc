@@ -6,6 +6,7 @@ import { Text } from "./Template/Text";
 import { Video } from "./Template/Video";
 import { frameImgUrl } from "@/utils/helper";
 import { PortableText } from "@portabletext/react";
+import useSWR from "swr";
 
 
 export default function Testiomial({Content}:any) {
@@ -70,7 +71,7 @@ export default function Testiomial({Content}:any) {
     setClientFeedBack(data?.testimony[0])
   };
   
-  useEffect(() => {
+  const gettestimonialdata = () => {
     let data: any = {}
     data.title = Content?.title;
     data.subtitle = Content?.testimony_sub_title[0]?.children[0]?.text;
@@ -79,7 +80,9 @@ export default function Testiomial({Content}:any) {
     setTestimonialData(data);
     setActiveClient(Content?.testimony[0]);
     setClientFeedBack(Content?.testimony[0]?.testimony[0])
-  }, [Content]);
+  };
+
+  const {data, error} = useSWR(Content?._id, gettestimonialdata)
 
   return (
     <section className={styles.sectionContainer}>
@@ -139,3 +142,5 @@ export default function Testiomial({Content}:any) {
     </section>
   );
 }
+
+

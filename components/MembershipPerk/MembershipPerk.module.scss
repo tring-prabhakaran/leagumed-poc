@@ -21,12 +21,14 @@
       z-index: 5;
     }
 
+
+
     .membershipCard {
       position: absolute;
       right: 19%;
       bottom: 14%;
       overflow: auto;
-      padding: 55px 80px 55px 80px;
+      padding: 3.348rem 5rem 3.348rem  5rem;
       background: #ffffff;
       max-height: 632px;
       max-width: 700px;
@@ -70,7 +72,7 @@
         padding: 16px 26px 16px 28px;
         background: var(--primary-color);
         border-radius: 8px;
-        width: 211px;
+        width: 231px;
         height: 56px;
       }
     }
@@ -146,16 +148,48 @@
   }
 }
 
+
 @media only screen and (min-width: 1800px) {
   .membershipSection {
     .membershipPerks {
-      .parentPerk {
+      .parentPerk{
         width: 60%;
       }
       .membershipCard {
         width: 100%;
-        left: 55%;
+        left: 50%;
+        
       }
     }
   }
 }
+
+@media only screen and (min-width: 1110px) and (max-width: 1500px) {
+  .membershipSection {
+    .membershipPerks {
+      .parentPerk{
+          width: 57%;
+      }
+      .membershipCard {
+         right: 5%;
+        
+      }
+    }
+  }
+}
+  .membershipCard::-webkit-scrollbar{
+    width: 6px;
+  }
+
+  .membershipCard::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  .membershipCard::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+  }
+  .membershipCard::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+  }
