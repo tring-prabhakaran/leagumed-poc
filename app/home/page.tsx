@@ -1,7 +1,10 @@
 import { Metadata } from 'next';
+// API
 import { getClient } from "@/lib/apolloClient";
 import { HOME_QUERY } from '@/queries/HomeQuery';
 // Compoenent
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import SkeletonComponent from "@/components/SkeletonStructure/SkeletonComponent";
 import MembershipPerk from '@/components/MembershipPerk/MembershipPerk';
 import Partner from '@/components/Partner/Partner';
@@ -9,39 +12,31 @@ import Testimonial from '@/components/Testimonial/Testimonial';
 import Banner from '@/components/Banner/Banner';
 // Styles
 import styles from './home.module.scss'
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
-import { NAV_MENU } from '@/queries/HeaderQuery';
 
 export const metadata: Metadata = {
   title: 'Home - Leagumed',
 };
 
-
 async function getHomeData(query: any) {
   const client = getClient();
   const homeReponse = await client.query({ query });
-  return homeReponse?.data?.getHomePageData?.homePage?.pageBuilder
+  const result: any = { 
+    homeData: homeReponse?.data?.getHomePageData?.homePage?.pageBuilder,
+    navMenu: homeReponse?.data?.getHomePageData?.header?.pageBuilder
+  }
+  return result
 }
 
-async function getHeaderMenu(query: any) {
-  const client = getClient();
-  const headerReponse = await client.query({ query });
-  return headerReponse?.data?.getNavigationMenu?.pageBuilder;
-};
-
-
-export default async function Home () {
-  const HomePageData = await getHomeData(HOME_QUERY);
-  const navMenu = await getHeaderMenu(NAV_MENU);
+export default async function HomePage () {
+  const { homeData, navMenu }  = await getHomeData(HOME_QUERY);
   
   return (
     <>
       <Header headerPosition='absolute' navMenu={navMenu}/>
       <div className={styles.homePage}>
-      {HomePageData ? (
+      {homeData ? (
             <div>
-              {HomePageData.map((item: any, index: number) =>
+              {homeData.map((item: any, index: number) =>
                 item._type === "herosection" ? (
                   <Banner key={index} content={item?.pageBuilder[0]} />
                 ) : item._type === "partnerlogo" ? (
