@@ -1,0 +1,148 @@
+.registerBlock {
+    .content {
+        padding: 44px 84px;
+        align-content: center;
+
+        .heading {
+            font-family: DMSerifDisplayRegular;
+            font-size: 38px;
+            color: var(--heading-light);
+            align-self: center;
+            text-align: center;
+        }
+
+        .description {
+            font-family: MulishMedium;
+            font-size: 16px;
+            color: var(--paragraph-light);
+            text-align: center;
+        }
+
+        .link {
+            color: var(--link-light);
+        }
+
+        .formGroup {
+            height: 100px;
+
+            .required {
+                &::after {
+                    content: "*";
+                    color: red;
+                    margin-left: 5px;
+                }
+            }
+
+            .label {
+                color: var(--label-light);
+                font-size: 14px;
+                font-family: MulishRegular;
+            }
+
+            .control {
+                height: 50px;
+                margin-top: 5px;
+                color: var(--label-light);
+            }
+
+            .control:focus {
+                box-shadow: 0 0 0px #fff;
+                border-color: var(--label-light);
+            }
+
+            .errorcontrol {
+                height: 50px;
+                margin-top: 5px;
+                color: var(--label-light);
+                border: 1px solid var(--errorlabel-light);
+            }
+
+            .passwordBlock {
+                position: relative;
+
+                .toggle {
+                    position: absolute;
+                    top: 50%;
+                    right: 5px;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                }
+            }
+
+            .dropDown:focus {
+                box-shadow: 0 0 0px;
+                border-color: var(--label-light);
+            }
+
+            .error {
+                font-size: 13px;
+                font-family: MulishRegular;
+                color: var(--errorlabel-light);
+            }
+        }
+
+        .passwordalert {
+            .title {
+                font-size: 16px;
+                color: var(--label-light);
+                font-family: MulishSemiBold;
+                margin-bottom: 5px;
+            }
+
+            .alertblock {
+                margin-bottom: 2px;
+
+                .indicator {
+                    margin-right: 5px;
+                }
+
+                .indicatortext {
+                    font-size: 16px;
+                    color: var(--sub-heading-dark);
+                    font-family: MulishRegular;
+                }
+
+                .correctindicatortext {
+                    font-size: 16px;
+                    color: var(--successlabel-light);
+                    font-family: MulishRegular;
+                }
+
+                .wrongindicatortext {
+                    font-size: 16px;
+                    color: var(--errorlabel-light);
+                    font-family: MulishRegular;
+                }
+            }
+        }
+
+        .disabledsubmitbtn {
+            width: 100%;
+            height: 60px;
+            background-color: var(--paragraph-dark);
+            border: none;
+            margin: 28px 0;
+        }
+
+        .submitbtn {
+            width: 100%;
+            height: 60px;
+            background-color: var(--submit-light);
+            border: none;
+            margin: 28px 0;
+        }
+
+        .login {
+            color: var(--sub-heading-dark);
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .registerBlock {
+        .content {
+            padding: 14px 14px;
+        }
+    }
+}

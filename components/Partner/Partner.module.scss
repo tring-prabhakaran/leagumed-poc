@@ -1,0 +1,16 @@
+.partner {
+  background-color: var(--light-bg);
+  height: auto;
+  padding: 2rem 3.75rem;
+  border-bottom: 1px solid #e2e8f0;
+
+  .slick-slider .slick-initialized {
+    height: 6.25rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .partner {
+    padding: 0.938rem;
+  }
+}

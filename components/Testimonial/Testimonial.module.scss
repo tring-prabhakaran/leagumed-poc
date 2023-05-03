@@ -1,0 +1,190 @@
+.sectionContainer {
+  .testimonialParent {
+    padding-top: 5%;
+    padding-bottom: 8%;
+    background: #f5fbff;
+    .testimonialText {
+      font-family: MulishSemiBold;
+      font-size: 1rem;
+      line-height: 28px;
+      letter-spacing: 0.04em;
+      color: #50b2fa;
+      margin-left: -6%;
+    }
+    .clientFeedback {
+      font-family: DMSerifDisplayRegular;
+      font-size: 3rem;
+      line-height: 56px;
+      letter-spacing: 0.01em;
+      margin-left: -6%;
+      margin-bottom: 100px;
+    }
+    .videoContainer {
+      width: 60%;
+      .videos {
+        height: 380px;
+        background-color: #fff;
+        .htmlVideo {
+          object-fit: fill;
+          border-radius: 12px;
+        }
+      }
+      .feedName {
+        font-family: DMSerifDisplayRegular;
+        font-size: 1.5rem;
+        line-height: 34px;
+        letter-spacing: 0.01em;
+        color: #be9a4f;
+        bottom: 60px;
+        padding-left: 50px;
+        height: 30px;
+        overflow: hidden;
+      }
+      .feedExplain {
+        font-family: MulishSemiBold;
+        font-size: 0.875rem;
+        line-height: 24px;
+        color: #979baa;
+        bottom: 23px;
+        padding-left: 50px;
+        height: 30px;
+        overflow: hidden;
+      }
+      .quotes {
+        left: 55px;
+        top: 70px;
+        z-index: 100;
+      }
+      .imgParent {
+        margin-left: 30px;
+        gap: 20px;
+        // bottom: 325px;
+        top: 25%;
+        z-index: 1;
+        .selectedAvatar {
+          width: 104px;
+          height: 104px;
+          opacity: 1;
+          margin-top: 0px;
+          cursor: pointer;
+          border-radius: 3.313rem;
+        }
+        .unselectedAvatar {
+          width: 86px;
+          height: 86px;
+          opacity: 0.4;
+          margin-top: 10px;
+          cursor: pointer;
+          border-radius: 3.313rem;
+        }
+      }
+      .playPause {
+        bottom: 150px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .sectionContainer {
+    .testimonialParent {
+      .testimonialText {
+        font-size: 0.9rem;
+        margin-left: 20px;
+      }
+      .clientFeedback {
+        font-size: 1.5rem;
+        margin-left: 20px;
+      }
+      .videoContainer {
+        width: 90%;
+        .imgParent {
+          margin-left: 1px;
+          gap: 10px;
+          .selectedAvatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 3.313rem;
+          }
+          .unselectedAvatar {
+            width: 80px;
+            height: 80px;
+          }
+        }
+        .feedName {
+          font-size: 1.1rem;
+          padding-left: 24px;
+        }
+        .feedExplain {
+          padding-left: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 880px) {
+  .sectionContainer {
+    .testimonialParent {
+      .testimonialText {
+        font-size: 0.9rem;
+        margin-left: 20px;
+      }
+      .clientFeedback {
+        font-size: 2rem;
+        margin-left: 20px;
+      }
+      .videoContainer {
+        width: 90%;
+        .feedName {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 880px) and (max-width: 1280px) {
+  .sectionContainer {
+    .testimonialParent {
+      .testimonialText {
+        font-size: 0.9rem;
+      }
+      .clientFeedback {
+        font-size: 2.5rem;
+      }
+      .videoContainer {
+        .feedName {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+//for text.tsx
+.feedbackTextBlock {
+  padding: 80px 50px;
+  min-height: 350px;
+
+  .feedbackText {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .feedbackTextBlock {
+    padding: 80px 24px;
+    .feedbackText {
+      font-size: 14px;
+    }
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 720px) {
+  .feedbackTextBlock {
+    .feedbackText {
+      font-size: 20px;
+    }
+  }
+}
