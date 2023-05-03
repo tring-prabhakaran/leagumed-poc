@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 async function getHomeData(query: any) {
   const client = getClient();
   const homeReponse = await client.query({ query });
-  return homeReponse?.data?.getHomePageData?.pageBuilder
+  return homeReponse?.data?.getHomePageData?.homePage?.pageBuilder
 }
 
 async function getHeaderMenu(query: any) {
